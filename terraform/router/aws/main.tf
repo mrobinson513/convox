@@ -2,10 +2,6 @@ terraform {
   required_version = ">= 0.12.0"
 }
 
-provider "aws" {
-  version = "~> 3.0"
-}
-
 provider "http" {
   version = "~> 1.1"
 }

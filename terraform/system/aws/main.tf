@@ -1,9 +1,3 @@
-provider "aws" {
-  version = "~> 3.0"
-
-  region = var.region
-}
-
 provider "http" {
   version = "~> 1.1"
 }
