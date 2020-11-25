@@ -2,10 +2,6 @@ terraform {
   required_version = ">= 0.12.0"
 }
 
-provider "aws" {
-  version = "~> 2.49"
-}
-
 provider "external" {
   version = "~> 1.2"
 }
@@ -30,7 +26,6 @@ module "api" {
   source = "../../api/aws"
 
   providers = {
-    aws        = aws
     kubernetes = kubernetes
   }
 
@@ -56,7 +51,6 @@ module "resolver" {
   source = "../../resolver/aws"
 
   providers = {
-    aws        = aws
     kubernetes = kubernetes
   }
 
@@ -69,7 +63,6 @@ module "router" {
   source = "../../router/aws"
 
   providers = {
-    aws        = aws
     kubernetes = kubernetes
   }
 

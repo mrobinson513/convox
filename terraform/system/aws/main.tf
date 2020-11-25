@@ -1,9 +1,3 @@
-provider "aws" {
-  version = "~> 2.49"
-
-  region = var.region
-}
-
 provider "http" {
   version = "~> 1.1"
 }
@@ -34,10 +28,6 @@ locals {
 module "cluster" {
   source = "../../cluster/aws"
 
-  providers = {
-    aws = aws
-  }
-
   cidr      = var.cidr
   name      = var.name
   node_disk = var.node_disk
@@ -49,7 +39,6 @@ module "fluentd" {
   source = "../../fluentd/aws"
 
   providers = {
-    aws        = aws
     kubernetes = kubernetes
   }
 
@@ -65,7 +54,6 @@ module "rack" {
   source = "../../rack/aws"
 
   providers = {
-    aws        = aws
     kubernetes = kubernetes
   }
 
