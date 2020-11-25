@@ -26,7 +26,6 @@ module "api" {
   source = "../../api/aws"
 
   providers = {
-    aws        = aws
     kubernetes = kubernetes
   }
 
@@ -52,7 +51,6 @@ module "resolver" {
   source = "../../resolver/aws"
 
   providers = {
-    aws        = aws
     kubernetes = kubernetes
   }
 
@@ -65,7 +63,6 @@ module "router" {
   source = "../../router/aws"
 
   providers = {
-    aws        = aws
     kubernetes = kubernetes
   }
 
