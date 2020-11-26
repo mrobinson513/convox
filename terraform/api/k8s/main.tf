@@ -1,7 +1,3 @@
-provider "kubernetes" {
-  version = "~> 1.11"
-}
-
 provider "random" {
   version = "~> 2.2"
 }

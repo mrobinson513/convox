@@ -6,10 +6,6 @@ provider "http" {
   version = "~> 1.1"
 }
 
-provider "kubernetes" {
-  version = "~> 1.11"
-}
-
 locals {
   tags = {
     System = "convox"

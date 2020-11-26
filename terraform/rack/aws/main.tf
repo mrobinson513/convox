@@ -6,10 +6,6 @@ provider "external" {
   version = "~> 1.2"
 }
 
-provider "kubernetes" {
-  version = "~> 1.11"
-}
-
 module "k8s" {
   source = "../k8s"
 

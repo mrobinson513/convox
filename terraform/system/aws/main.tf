@@ -2,16 +2,6 @@ provider "http" {
   version = "~> 1.1"
 }
 
-provider "kubernetes" {
-  version = "~> 1.11"
-
-  cluster_ca_certificate = module.cluster.ca
-  host                   = module.cluster.endpoint
-  token                  = data.aws_eks_cluster_auth.cluster.token
-
-  load_config_file = false
-}
-
 data "aws_eks_cluster_auth" "cluster" {
   name = module.cluster.id
 }
