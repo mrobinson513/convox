@@ -15,10 +15,6 @@ locals {
 module "k8s" {
   source = "../k8s"
 
-  providers = {
-    kubernetes = kubernetes
-  }
-
   cluster   = var.cluster
   image     = "convox/fluentd:1.7"
   namespace = var.namespace

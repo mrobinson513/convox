@@ -28,10 +28,6 @@ module "cluster" {
 module "fluentd" {
   source = "../../fluentd/aws"
 
-  providers = {
-    kubernetes = kubernetes
-  }
-
   cluster   = module.cluster.id
   namespace = "kube-system"
   oidc_arn  = module.cluster.oidc_arn
@@ -42,10 +38,6 @@ module "fluentd" {
 
 module "rack" {
   source = "../../rack/aws"
-
-  providers = {
-    kubernetes = kubernetes
-  }
 
   cluster   = module.cluster.id
   name      = var.name

@@ -9,10 +9,6 @@ provider "external" {
 module "k8s" {
   source = "../k8s"
 
-  providers = {
-    kubernetes = kubernetes
-  }
-
   domain  = module.router.endpoint
   name    = var.name
   release = var.release
@@ -20,10 +16,6 @@ module "k8s" {
 
 module "api" {
   source = "../../api/aws"
-
-  providers = {
-    kubernetes = kubernetes
-  }
 
   domain    = module.router.endpoint
   name      = var.name
@@ -38,17 +30,10 @@ module "api" {
 module "metrics" {
   source = "../../metrics/k8s"
 
-  providers = {
-    kubernetes = kubernetes
-  }
 }
 
 module "resolver" {
   source = "../../resolver/aws"
-
-  providers = {
-    kubernetes = kubernetes
-  }
 
   namespace = module.k8s.namespace
   rack      = var.name
@@ -57,10 +42,6 @@ module "resolver" {
 
 module "router" {
   source = "../../router/aws"
-
-  providers = {
-    kubernetes = kubernetes
-  }
 
   name      = var.name
   namespace = module.k8s.namespace

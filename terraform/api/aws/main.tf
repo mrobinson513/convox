@@ -15,10 +15,6 @@ locals {
 module "k8s" {
   source = "../k8s"
 
-  providers = {
-    kubernetes = kubernetes
-  }
-
   domain    = var.domain
   namespace = var.namespace
   rack      = var.name

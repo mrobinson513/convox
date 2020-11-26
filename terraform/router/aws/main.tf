@@ -19,10 +19,6 @@ data "aws_region" "current" {
 module "nginx" {
   source = "../nginx"
 
-  providers = {
-    kubernetes = kubernetes
-  }
-
   namespace = var.namespace
   rack      = var.name
 }
